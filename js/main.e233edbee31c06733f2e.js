@@ -9961,7 +9961,7 @@ module.exports = styleTagTransform;
 /******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	(() => {
-/******/ 		__webpack_require__.p = "/";
+/******/ 		__webpack_require__.p = "/react-meal/";
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/nonce */
@@ -10121,7 +10121,7 @@ var PopStateEventType = 'popstate';
  * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#createbrowserhistory
  */
 
-function history_createBrowserHistory(options) {
+function createBrowserHistory(options) {
   if (options === void 0) {
     options = {};
   }
@@ -10197,7 +10197,7 @@ function history_createBrowserHistory(options) {
 
   if (index == null) {
     index = 0;
-    globalHistory.replaceState(_extends({}, globalHistory.state, {
+    globalHistory.replaceState(extends_extends({}, globalHistory.state, {
       idx: index
     }), '');
   }
@@ -10212,7 +10212,7 @@ function history_createBrowserHistory(options) {
       state = null;
     }
 
-    return readOnly(_extends({
+    return readOnly(extends_extends({
       pathname: location.pathname,
       hash: '',
       search: ''
@@ -10352,7 +10352,7 @@ function history_createBrowserHistory(options) {
  * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#createhashhistory
  */
 
-function createHashHistory(options) {
+function history_createHashHistory(options) {
   if (options === void 0) {
     options = {};
   }
@@ -10443,7 +10443,7 @@ function createHashHistory(options) {
 
   if (index == null) {
     index = 0;
-    globalHistory.replaceState(extends_extends({}, globalHistory.state, {
+    globalHistory.replaceState(_extends({}, globalHistory.state, {
       idx: index
     }), '');
   }
@@ -10470,7 +10470,7 @@ function createHashHistory(options) {
       state = null;
     }
 
-    return readOnly(extends_extends({
+    return readOnly(_extends({
       pathname: location.pathname,
       hash: '',
       search: ''
@@ -11825,7 +11825,7 @@ function BrowserRouter(_ref) {
     children,
     window
   } = _ref;
-  let historyRef = useRef();
+  let historyRef = (0,react.useRef)();
 
   if (historyRef.current == null) {
     historyRef.current = createBrowserHistory({
@@ -11834,12 +11834,12 @@ function BrowserRouter(_ref) {
   }
 
   let history = historyRef.current;
-  let [state, setState] = useState({
+  let [state, setState] = (0,react.useState)({
     action: history.action,
     location: history.location
   });
-  useLayoutEffect(() => history.listen(setState), [history]);
-  return /*#__PURE__*/createElement(Router, {
+  (0,react.useLayoutEffect)(() => history.listen(setState), [history]);
+  return /*#__PURE__*/(0,react.createElement)(react_router_Router, {
     basename: basename,
     children: children,
     location: state.location,
@@ -11858,7 +11858,7 @@ function HashRouter(_ref2) {
     children,
     window
   } = _ref2;
-  let historyRef = (0,react.useRef)();
+  let historyRef = useRef();
 
   if (historyRef.current == null) {
     historyRef.current = createHashHistory({
@@ -11867,12 +11867,12 @@ function HashRouter(_ref2) {
   }
 
   let history = historyRef.current;
-  let [state, setState] = (0,react.useState)({
+  let [state, setState] = useState({
     action: history.action,
     location: history.location
   });
-  (0,react.useLayoutEffect)(() => history.listen(setState), [history]);
-  return /*#__PURE__*/(0,react.createElement)(react_router_Router, {
+  useLayoutEffect(() => history.listen(setState), [history]);
+  return /*#__PURE__*/createElement(Router, {
     basename: basename,
     children: children,
     location: state.location,
@@ -12564,7 +12564,7 @@ const Recipe = () => {
 
 
 function App() {
-  return /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement(HashRouter, {
+  return /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement(BrowserRouter, {
     basename: "/react-meal"
   }, /*#__PURE__*/react.createElement(Header, null), /*#__PURE__*/react.createElement("main", {
     className: "content container"
