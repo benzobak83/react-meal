@@ -12341,13 +12341,13 @@ const Main = () => {
     cb: handleSearch
   }), /*#__PURE__*/react.createElement("h1", {
     className: "not-found"
-  }, "Not found")) : /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement(Search, {
-    cb: handleSearch
-  }), /*#__PURE__*/react.createElement("div", {
+  }, "Not found")) : /*#__PURE__*/react.createElement(react.Fragment, null, /*#__PURE__*/react.createElement("div", {
     className: "categories-div title-div"
   }, /*#__PURE__*/react.createElement("h2", {
     className: "categories-title h2-title"
-  }, "Categories")), " "), !Number(localStorage.getItem("alert")) ? //проверка локального хранилища, который устанавливается в компоненте категорий. Если установлен - подсказывающая уведа пропадет
+  }, "Categories"), /*#__PURE__*/react.createElement(Search, {
+    cb: handleSearch
+  })), " "), !Number(localStorage.getItem("alert")) ? //проверка локального хранилища, который устанавливается в компоненте категорий. Если установлен - подсказывающая уведа пропадет
   alertCategory ? /*#__PURE__*/react.createElement(CategoryTitle, null) : /*#__PURE__*/react.createElement(CategoryTitle, {
     right: "-800px"
   }) : false, /*#__PURE__*/react.createElement(CategoryList, {
