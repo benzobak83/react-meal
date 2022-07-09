@@ -13,7 +13,7 @@ export { App };
 function App() {
   return (
     <>
-      <BrowserRouter basename="/react-meal">
+      <BrowserRouter>
         <Header />
         <main className="content container">
           <Routes>
