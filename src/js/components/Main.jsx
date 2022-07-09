@@ -53,9 +53,9 @@ const Main = () => {
             </>
           ) : (
             <>
-              <Search cb={handleSearch} />
               <div className="categories-div title-div">
                 <h2 className="categories-title h2-title">Categories</h2>
+                <Search cb={handleSearch} />
               </div>{" "}
             </>
           )}
