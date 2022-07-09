@@ -6,14 +6,14 @@ import { About } from "./pages/About.jsx";
 import { Contact } from "./pages/Contact.jsx";
 import { NotFound } from "./pages/NotFound.jsx";
 import { Category } from "./pages/Category.jsx";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { Recipe } from "./pages/Recipe.jsx";
 export { App };
 
 function App() {
   return (
     <>
-      <HashRouter basename="/react-meal">
+      <BrowserRouter basename="/react-meal">
         <Header />
         <main className="content container">
           <Routes>
@@ -27,7 +27,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
-      </HashRouter>
+      </BrowserRouter>
     </>
   );
 }
